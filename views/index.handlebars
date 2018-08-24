@@ -1,0 +1,83 @@
+
+<div class = "row">
+
+    <div class = "col-md-2"></div>
+
+    <div class = "col-md-4">
+
+
+        <div class="card bg-light mb-3 ml-5" style="max-width: 18rem;">
+            <div class="card-header">Burgers To Eat</div>
+            <div class="undevoured card-body">
+            
+                {{#each burgers}}
+
+                    {{#if this.devoured}}
+
+                    {{else}}
+
+                        {{this.burger_name}}
+
+                        <button class = "btn-sm btn-danger devour" data-id = "{{this.id}}">Devour! <i class="fas fa-utensils"></i></button>
+
+                        <br>
+
+                    {{/if}} 
+
+                {{/each}}
+
+            <br><br>
+
+            </div>
+        </div>
+  
+    </div>
+
+        <div class = "col-md-4">
+
+
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Burgers Eaten</div>
+            <div class="card-body">
+            
+                {{#each burgers}}
+
+                {{#if this.devoured}}
+
+                    {{this.burger_name}}
+
+                    <br>
+
+                {{/if}} 
+
+                {{/each}}
+
+            </div>
+        </div>
+  
+    </div>
+
+    <div class = "col-md-2"></div>
+
+    </div>
+
+    <div class = "row">
+
+        <div class = "col-md-4 mx-auto">
+
+
+            <form class = "create-form"></form>
+
+                <div class = "form-group">
+
+                    <textarea id = "newBurger"></textarea><br>
+
+                    <button class = "btn btn-danger" type ="submit" id ="submit">Add a burger! <i class="fas fa-plus-circle"></i></button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
